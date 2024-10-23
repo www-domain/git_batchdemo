@@ -53,4 +53,4 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOSTNAME: ${{ secrets.SSH_HOST }}
         run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.SSH_HOST }} "sudo cp /home/ubuntu/*.war 
+          ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.SSH_HOST }} 'sudo cp /home/ubuntu/*.war /var/lib/tomcat9/webapps/'
