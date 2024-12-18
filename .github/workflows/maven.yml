@@ -40,8 +40,8 @@ jobs:
           
       - name: Deploy WAR via SCP
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          HOSTNAME: ${{ secrets.SSH_HOST }}
+          SSH_PRIVATE_KEY:${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME:${{ secrets.SSH_HOST }}
         run: |
           which scp
           mkdir -p ~/.ssh
