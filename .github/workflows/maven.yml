@@ -40,15 +40,15 @@ jobs:
           
       - name: Deploy WAR via SCP
         env:
-          SSH_PRIVATE_KEY:${{ secrets.SSH_PRIVATE_KEY }}
-          HOSTNAME:${{ secrets.SSH_HOST }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{ secrets.SSH_HOST }}
         run: |
-          which scp
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $HOSTNAME >> ~/.ssh/known_hosts
           scp -i ~/.ssh/id_rsa target/*.war ubuntu@${{ secrets.SSH_HOST }}:/home/ubuntu/
+          
       - name: Copy WAR file to Tomcat webapps
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
