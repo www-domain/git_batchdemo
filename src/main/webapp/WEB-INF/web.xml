@@ -14,7 +14,7 @@
         <servlet-class>com.microsoft.webapp.samples.TrackerServlet</servlet-class>
         <init-param>
             <param-name>pageTitle</param-name>
-            <param-value>WELCOME To Version 2.0.0</param-value>
+            <param-value>WELCOME To Version 3.0.0</param-value>
         </init-param>
     </servlet>
 
